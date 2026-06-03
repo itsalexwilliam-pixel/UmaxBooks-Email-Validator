@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python gui_app.py)",
+      "Bash(ping -n 5 127.0.0.1)",
+      "Bash(taskkill /F /IM python.exe /T)",
+      "Bash(exit 0)",
+      "Bash(taskkill /F /IM python.exe)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''gui_app.py''\\).read\\(\\)\\); print\\(''Syntax OK''\\)\")",
+      "Bash(ping -n 4 127.0.0.1)",
+      "Bash(python -c \":*)",
+      "Bash(dir \"C:\\\\Users\\\\itsal\\\\Desktop\\\\uMaxBooks\\\\UmaxBooks Email Validator\" /B)",
+      "Bash(pip show pyinstaller)",
+      "Bash(pyinstaller --clean UmaxBooksEmailValidator.spec)"
+    ]
+  }
+}

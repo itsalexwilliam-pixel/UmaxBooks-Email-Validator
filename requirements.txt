@@ -1,0 +1,7 @@
+dnspython==2.4.2
+Pillow>=9.0.0
+Flask>=2.0.0
+Flask-CORS>=3.0.0
+pandas>=2.2.0
+openpyxl>=3.1.0
+xlrd>=2.0.1
