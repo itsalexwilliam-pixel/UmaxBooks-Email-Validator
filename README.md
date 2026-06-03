@@ -1,270 +1,325 @@
-# 📧 Power Email Validation
+<div align="center">
 
-A comprehensive Python-based email validation tool that checks email syntax, domain validity, and deliverability.
+<img src="Power.png" alt="UmaxBooks Power Email Validator" width="120"/>
 
-## ✨ Features
+# ⚡ UmaxBooks Power Email Validator
 
-### Core Features
-- **Email Syntax Validation**: Validates email format using regex
-- **DNS/MX Record Check**: Verifies domain exists and has mail servers
-- **SMTP Verification**: Deep check for email deliverability (optional)
-- **Bulk Validation**: Validate hundreds of emails at once
-- **Multiple Interfaces**: 
-  - GUI (Graphical User Interface)
-  - CLI (Command Line Interface)
-  - REST API (Phase 3)
-  - Python API
-- **Export Results**: Save results in CSV, JSON, or TXT format
-- **Import from File**: Load emails from text or CSV files
+**Enterprise-grade email validation desktop app — no internet subscription, no per-email fees, runs fully offline on any Windows machine.**
 
-### Phase 3: Enterprise Features 🚀
-- **REST API Server**: HTTP endpoints for integration with any application
-- **Parallel Processing**: 10x faster batch validation with concurrent processing
-- **Advanced Reporting**: Comprehensive analytics with 7 report sections
-- **Domain Reputation**: 0-100 risk scoring with SPF/DKIM verification
-- **Real-time Monitoring**: Progress tracking and performance metrics
-- **Production Ready**: Rate limiting, error handling, CORS support
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)](https://python.org)
+[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)](https://github.com/itsalexwilliam-pixel/UmaxBooks-Email-Validator)
+[![License](https://img.shields.io/badge/License-Free%20to%20Use-brightgreen)](LICENSE)
+[![Build](https://img.shields.io/badge/Build-PyInstaller%20EXE-orange)](https://pyinstaller.org)
 
-## 🚀 Installation
+</div>
 
-### Prerequisites
-- Python 3.7 or higher
+---
 
-### Setup
+## 🧠 What is This?
 
-1. **Clone or download this repository**
+UmaxBooks Power Email Validator is a **professional-grade, multi-layer email validation platform** built for marketing teams, data analysts, CRM managers, and developers.
 
-2. **Install required packages:**
-```bash
-pip install -r requirements.txt
+Unlike simple regex checkers, this tool runs a **9-step deep validation pipeline** — verifying syntax, DNS records, MX servers, SPF/DKIM configuration, catch-all behavior, SMTP deliverability, and domain reputation — then produces a **confidence score (0–100%)** for every email.
+
+> ✅ **One-click EXE** — no Python, no pip, no dependencies needed on target machines.
+
+---
+
+## 🚀 Key Features & USPs
+
+### ⚙️ Multi-Layer Validation Engine (Not Just Regex)
+Most tools only check email *format*. This tool validates **9 layers deep**:
+
+| Layer | What It Checks |
+|-------|---------------|
+| 1️⃣ Syntax | Format correctness (local + domain structure) |
+| 2️⃣ Disposable Check | Detects temp/throwaway email providers |
+| 3️⃣ DNS Resolution | Domain exists and is reachable |
+| 4️⃣ MX Records | Mail servers are properly configured |
+| 5️⃣ SPF Record | Sender Policy Framework trust signal |
+| 6️⃣ DKIM Signal | Domain Keys Identified Mail authentication |
+| 7️⃣ Catch-All Detection | Identifies domains accepting all addresses |
+| 8️⃣ SMTP Verification | Live check against the actual mail server |
+| 9️⃣ Confidence Score | 0–100% score from all combined signals |
+
+---
+
+### 📊 Actionable Confidence Scoring
+
+Every email returns a **confidence score**, not just pass/fail:
+
+| Score | Meaning | Action |
+|-------|---------|--------|
+| 🟢 80–100% | High confidence — deliverable | Safe to send |
+| 🟡 50–79% | Medium confidence | Review before campaign |
+| 🔴 0–49% | Low confidence | Skip or investigate |
+
+---
+
+### ⚡ Parallel Batch Processing
+- Validates **hundreds of emails simultaneously** using multi-threaded processing
+- Real-time progress bar, live status table, and throughput metrics
+- Automatically scales with available CPU cores
+
+---
+
+### 🖥️ Enterprise Desktop GUI
+A modern, theme-aware desktop interface with:
+- **Dark / Light / Ocean themes** — switch with one click
+- **Dashboard** with live KPI cards (total validated, valid %, deliverable %, avg confidence)
+- **Single Validation tab** — deep-dive results panel with color-coded signals
+- **Batch Validation tab** — import file → validate → export in one flow
+- **Reports tab** — full analytics summary with exportable report
+- **Live Logs tab** — real-time validation event feed
+
+---
+
+### 📂 Universal Import + Same-Format Export
+Import emails from any format:
+- `.txt` plain list
+- `.csv` spreadsheet
+- `.xls` / `.xlsx` Excel files
+
+Column mapper dialog auto-detects the email field. After validation, exports enriched results **back in the same file format** with appended columns:
+- `validation_is_valid`
+- `validation_deliverable`
+- `validation_confidence`
+- `validation_status`
+- `validation_messages`
+
+---
+
+### 🔌 Multi-Interface Architecture
+
+| Interface | Best For |
+|-----------|---------|
+| 🖥️ **Desktop GUI** | Business users, marketing teams |
+| ⌨️ **CLI** | Automation scripts, ops pipelines |
+| 🌐 **REST API** | Developer integrations, web apps |
+| 🐍 **Python API** | Embedding in custom Python projects |
+
+---
+
+### 🛡️ Production-Friendly Behavior
+- DNS result caching (avoids duplicate lookups)
+- Built-in rate limiting (prevents IP blocks)
+- Timeout handling on all network operations
+- Structured logging with timestamps
+- Robust exception handling at every layer
+
+---
+
+### 📦 Zero-Dependency EXE Distribution
+- Ships as a single **self-contained `.exe`** (~65 MB)
+- No Python installation needed
+- No pip, no virtual environment, no setup
+- Just double-click and run on any Windows machine
+
+---
+
+## 📁 Project Structure
+
+```
+UmaxBooks Email Validator/
+├── gui_app.py               # Main desktop GUI (Tkinter)
+├── email_validator.py       # Core 9-layer validation engine
+├── advanced_email_validator.py  # Enhanced enterprise validation logic
+├── parallel_processor.py    # Multi-threaded batch processing
+├── advanced_reporter.py     # Analytics & report generation
+├── domain_reputation.py     # Domain risk scoring
+├── api_server.py            # Flask REST API server
+├── cli_app.py               # Command-line interface
+├── Power.png                # App logo
+├── app_icon.ico             # Windows EXE icon
+├── UmaxBooksEmailValidator.spec  # PyInstaller build spec
+└── requirements.txt         # Python dependencies
 ```
 
-## 📖 Usage
+---
 
-### GUI Application (Recommended for Beginners)
+## 🖥️ Installation & Usage
 
-Run the graphical interface:
+### Option 1 — Run the EXE (Recommended, No Python Needed)
+
+> Download `PowerEmailValidation.exe` from [Releases](https://github.com/itsalexwilliam-pixel/UmaxBooks-Email-Validator/releases) and double-click. That's it.
+
+---
+
+### Option 2 — Run from Source (Python Required)
+
+**Prerequisites:** Python 3.8+
+
 ```bash
+# 1. Clone the repository
+git clone https://github.com/itsalexwilliam-pixel/UmaxBooks-Email-Validator.git
+cd UmaxBooks-Email-Validator
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Launch the GUI
 python gui_app.py
 ```
 
-Features:
-- Single email validation
-- Bulk email validation
-- Import emails from file
-- Export results
-- Real-time validation status
+---
 
-### Command Line Interface (CLI)
+### Option 3 — Command Line Interface
 
-**Validate a single email:**
 ```bash
+# Single email
 python cli_app.py user@example.com
-```
 
-**With SMTP verification:**
-```bash
+# With SMTP deep check
 python cli_app.py user@example.com --smtp
-```
 
-**Bulk validation from file:**
-```bash
+# Bulk validation from file → save as CSV
 python cli_app.py --bulk -i emails.txt -o results.csv
-```
 
-**Bulk validation with SMTP check:**
-```bash
+# Bulk with SMTP + JSON output
 python cli_app.py --bulk --smtp -i emails.txt -o results.json
 ```
 
-**CLI Options:**
-- `-b, --bulk`: Bulk validation mode
-- `-i, --input`: Input file path
-- `-o, --output`: Output file path (csv, json, txt)
-- `-s, --smtp`: Enable SMTP verification
-- `-t, --timeout`: Set timeout in seconds
-- `-v, --verbose`: Detailed output
+**CLI flags:**
+| Flag | Description |
+|------|-------------|
+| `-b, --bulk` | Enable bulk mode |
+| `-i, --input` | Input file path |
+| `-o, --output` | Output file (`.csv`, `.json`, `.txt`) |
+| `-s, --smtp` | Enable SMTP verification |
+| `-t, --timeout` | Timeout in seconds |
+| `-v, --verbose` | Show detailed output |
 
-### Python API
+---
 
-Use in your own Python scripts:
-
-```python
-from email_validator import EmailValidator
-
-# Create validator instance
-validator = EmailValidator(timeout=10)
-
-# Validate single email
-result = validator.validate_email("user@example.com", check_smtp=True)
-
-print(f"Valid: {result['is_valid']}")
-print(f"Deliverable: {result['deliverable']}")
-print(f"Messages: {result['messages']}")
-
-# Bulk validation
-emails = ["user1@example.com", "user2@example.com"]
-results = validator.validate_bulk(emails, check_smtp=False)
-
-for result in results:
-    print(f"{result['email']}: {result['is_valid']}")
-```
-
-### REST API (Phase 3)
-
-Start the API server for integration with external applications:
+### Option 4 — REST API Server
 
 ```bash
 python api_server.py
-# Server runs on http://localhost:5000
+# Runs at http://localhost:5000
 ```
 
-**Single email validation:**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Server health check |
+| GET | `/api/info` | API capabilities |
+| POST | `/api/validate` | Single email validation |
+| POST | `/api/validate/batch` | Batch validation (up to 1000) |
+| POST | `/api/analyze` | Full analytics report |
+| POST | `/api/domains` | Domain grouping analysis |
+
 ```bash
+# Example: validate a single email
 curl -X POST http://localhost:5000/api/validate \
   -H "Content-Type: application/json" \
   -d '{"email": "user@example.com", "check_smtp": true}'
 ```
 
-**Batch validation (up to 1000 emails):**
-```bash
-curl -X POST http://localhost:5000/api/validate/batch \
-  -H "Content-Type: application/json" \
-  -d '{"emails": ["user1@example.com", "user2@example.com"], "check_smtp": true}'
+---
+
+### Option 5 — Python API (Embed in Your Code)
+
+```python
+from email_validator import EmailValidator
+
+validator = EmailValidator(timeout=10)
+
+# Single email
+result = validator.validate_email("user@example.com", check_smtp=True)
+print(f"Valid: {result['is_valid']}")
+print(f"Confidence: {result['confidence']}%")
+print(f"Deliverable: {result['deliverable']}")
+
+# Bulk
+emails = ["alice@example.com", "bob@company.org"]
+results = validator.validate_bulk(emails, check_smtp=False)
+for r in results:
+    print(f"{r['email']} → {r['confidence']}% confident")
 ```
-
-**Advanced analysis with reporting:**
-```bash
-curl -X POST http://localhost:5000/api/analyze \
-  -H "Content-Type: application/json" \
-  -d '{"emails": ["list of emails"], "check_smtp": true}'
-```
-
-**Available endpoints:**
-- `GET /api/health` - Server health check
-- `GET /api/info` - API capabilities
-- `POST /api/validate` - Single email validation
-- `POST /api/validate/batch` - Batch validation
-- `POST /api/analyze` - Analysis with advanced reporting
-- `POST /api/domains` - Domain grouping analysis
-
-## 📊 Validation Process
-
-The validator performs three levels of checks:
-
-1. **Syntax Validation**: 
-   - Checks email format using regex
-   - Validates local and domain parts
-   - Ensures proper structure
-
-2. **DNS/MX Record Check**:
-   - Queries DNS for MX records
-   - Verifies domain exists
-   - Lists mail servers
-
-3. **SMTP Verification** (Optional):
-   - Connects to mail server
-   - Verifies email exists
-   - Tests deliverability
-
-## 📝 Input File Formats
-
-### Text File (emails.txt)
-```
-user1@example.com
-user2@example.com
-admin@company.com
-```
-
-### CSV File (emails.csv)
-```
-user1@example.com
-user2@example.com
-admin@company.com
-```
-
-## 📤 Output Formats
-
-### CSV Output
-```csv
-Email,Valid,Deliverable,Status
-user@example.com,True,True,Syntax: valid | MX: Found 2 records
-```
-
-### JSON Output
-```json
-[
-  {
-    "email": "user@example.com",
-    "is_valid": true,
-    "deliverable": true,
-    "messages": ["Syntax: valid", "MX: Found 2 records"]
-  }
-]
-```
-
-## ⚠️ Important Notes
-
-1. **SMTP Verification**: 
-   - More accurate but slower
-   - Some servers may block verification attempts
-   - Use sparingly to avoid being rate-limited
-
-2. **Rate Limiting**:
-   - Don't validate too many emails too quickly
-   - Some mail servers may temporarily block your IP
-
-3. **False Positives**:
-   - Some domains block SMTP verification
-   - Catch-all servers may accept all emails
-
-## 🛠️ Troubleshooting
-
-**DNS Resolution Errors:**
-- Check your internet connection
-- Verify DNS servers are accessible
-- Some networks may block DNS queries
-
-**SMTP Connection Issues:**
-- Firewall may block port 25
-- Some mail servers don't allow verification
-- Try without --smtp flag
-
-**Timeout Errors:**
-- Increase timeout: `-t 30`
-- Check slow network connection
-
-## 📧 Use Cases
-
-- **Marketing**: Verify email lists before campaigns
-- **Registration**: Validate user emails during signup
-- **Data Cleaning**: Clean up email databases
-- **Lead Generation**: Verify collected email addresses
-- **Bulk Processing**: Process large email lists
-
-## 🔒 Privacy & Security
-
-- No emails are stored or transmitted to third parties
-- All validation happens locally on your machine
-- SMTP checks connect directly to mail servers
-- No data is logged or saved without your consent
-
-## 📄 License
-
-Free to use for personal and commercial projects.
-
-## 👨‍💻 Developer
-
-Created by Power Email Validation
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📞 Support
-
-For questions or issues, please create an issue in the repository.
 
 ---
 
-**Happy Validating! 🎉**
+## 📤 Output Fields
+
+Every validated email returns:
+
+```json
+{
+  "email": "user@example.com",
+  "is_valid": true,
+  "deliverable": true,
+  "confidence": 90,
+  "syntax_valid": true,
+  "domain_exists": true,
+  "mx_records": ["mail.example.com"],
+  "smtp_status": "accepted",
+  "is_disposable": false,
+  "is_catchall": false,
+  "has_spf": true,
+  "has_dkim": true,
+  "messages": ["Syntax valid", "MX found", "SPF present", "SMTP accepted"],
+  "validation_time": 1.84
+}
+```
+
+---
+
+## 🎯 Business Use Cases
+
+| Use Case | How This Helps |
+|----------|---------------|
+| 📣 Email Marketing | Clean lists before campaigns — reduce bounce rate |
+| 🗄️ CRM Hygiene | Periodic database quality audits |
+| 🧲 Lead Generation | Verify collected leads before outreach |
+| 📝 User Signup | Real-time validation in onboarding flows |
+| ✅ Compliance | Data quality checks for ops & compliance teams |
+
+---
+
+## ⚠️ Important Notes
+
+- **SMTP Verification** is optional — some mail servers block probing; enabling it is slower but more accurate
+- **Catch-all domains** (e.g., custom business domains) may show 90% confidence even for non-existent mailboxes — this is expected behavior
+- **Gmail/Yahoo** confidence is capped at 40–50% when SMTP probing is blocked by those providers
+- All validation runs **locally** — no emails are sent to third parties
+
+---
+
+## 🔒 Privacy & Security
+
+- ✅ No emails stored or sent to external servers
+- ✅ All DNS/SMTP checks connect directly from your machine to mail servers
+- ✅ No telemetry, no analytics collection
+- ✅ Fully offline-capable (except DNS/SMTP checks which require internet)
+
+---
+
+## 🛠️ Build EXE from Source
+
+```bash
+# Install PyInstaller
+pip install pyinstaller
+
+# Build single-file EXE
+pyinstaller UmaxBooksEmailValidator.spec
+# Output: dist/PowerEmailValidation.exe
+```
+
+---
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome! For major changes, open an issue first to discuss what you'd like to change.
+
+---
+
+## 👨‍💻 Built By
+
+**UmaxBooks** — [umaxbooks.in](https://umaxbooks.in)
+
+---
+
+<div align="center">
+
+**⚡ Validate smarter. Send better.**
+
+</div>
